@@ -89,11 +89,7 @@ app.post('/product/update', function (req, res) {
     //db.none
     console.log('UPDATE:' + sql);
     res.send(sql);
-
-
-
 });
-
 
 
 app.get('/users/:id', function (req, res) {
