@@ -1,5 +1,6 @@
 var express = require('express');
 var pgp = require('pg-promise')(/*options*/)
+var db = pgp(process.env.DATABASE_URL); 
 var db = pgp('postgres://weaclbeiwbxfsq:27abbf9f549e54ea47de0b0e387e2d77cea04352f95426ccc713a672b1fcdb65@ec2-54-243-147-162.compute-1.amazonaws.com:5432/d1himi9nqbifnr?ssl=true')
 var app = express();
 var bodyParser = require('body-parser');
@@ -95,6 +96,10 @@ app.get('/users/:id', function (req, res) {
         })
 });
 
+app.get('/addnewproduct', function(req,res){
+    res.render('pages/addnewproduct');
+})
+
 app.get('/users', function (req, res) {
     db.any('select * from users', )
         .then(function (data) {
@@ -106,6 +111,8 @@ app.get('/users', function (req, res) {
             console.log('ERROR:' + error);
         })
 });
+
+
 
 var port = process.env.PORT || 8080;
 app.listen(port, function () {
