@@ -70,7 +70,7 @@ app.get('/users/:pid', function (req, res) {
     db.any(sql)
         .then(function (data) {
 
-            res.render('pages/users_edit', { user: data[0] })
+            res.render('pages/user_edit', { user: data[0] })
 
         })
         .catch(function (error) {
