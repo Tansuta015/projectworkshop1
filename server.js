@@ -88,6 +88,16 @@ app.post('/product/update', function (req, res) {
     var sql = `update product set title = ${title},price = ${price} where id = ${id}`;
     //db.none
     console.log('UPDATE:' + sql);
+    db.any(sql)
+        .then(function (data) {
+
+            res.render('pages/products', { products: data })
+
+        })
+        .catch(function (error) {
+            console.log('ERROR:' + error);
+
+        })
     res.send(sql);
 
 
