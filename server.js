@@ -99,8 +99,9 @@ app.get('/users/:id', function (req, res) {
 app.get('/addnewproduct', function(req,res){
     res.render('pages/addnewproduct');
 })
+
 app.get('/addnewuser', function(req,res){
-    res.render('pages/addnewuser);
+    res.render('pages/addnewuser');
 })
 
 app.get('/users', function (req, res) {
