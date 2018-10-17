@@ -63,6 +63,23 @@ app.get('/products/:pid', function (req, res) {
 
 
 });
+app.get('/users/:pid', function (req, res) {
+    var pid = req.params.pid;
+    var sql = "select * from users where id =" + pid;
+
+    db.any(sql)
+        .then(function (data) {
+
+            res.render('pages/users_edit', { users: data[0] })
+
+        })
+        .catch(function (error) {
+            console.log('ERROR:' + error);
+
+        })
+
+
+});
 //update data
 app.post('/product/update', function (req, res) {
     var id = req.body.id;
