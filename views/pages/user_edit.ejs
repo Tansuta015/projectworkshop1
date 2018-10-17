@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+<form action ="/user/update" method = "post">
+<div class="jumbotron">
+<h1 class="display-4">USER</h1>
+<div class="form-group">
+  <label for="">ID</label>
+  <input type="number"
+    class="form-control" value="<%= user.id %>" name="id" id="" aria-describedby="helpId" placeholder="">
+  <small id="helpId" class="form-text text-muted">User ID</small>
+</div>
+<div class="form-group">
+  <label for="">Email</label>
+  <input type="email"
+    class="form-control" value="<%= user.email %>" name="email" id="" aria-describedby="helpId" placeholder="">
+  <small id="helpId" class="form-text text-muted">User EMAIL</small>
+</div>
+<div class="form-group">
+  <label for="">Password</label>
+  <input type="number"
+    class="form-control" value="<%= user.email %>" name="password" id="" aria-describedby="helpId" placeholder="">
+  <small id="helpId" class="form-text text-muted">User PASSWORD</small>
+</div>
+<button type="submit" class="btn btn-secondary">CANCLE</button>
+<button type="submit" class="btn btn-success">SAVE</button>
+<button type="submit" class="btn btn-danger">DELETE</button>
+
+</div>
+</form>
+
+
+<% include ../partials/footer %>
