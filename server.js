@@ -91,6 +91,16 @@ app.post('/product/update', function (req, res) {
     res.send(sql);
 });
 
+app.post('/user/update', function (req, res) {
+    var id = req.body.id;
+    var email = req.body.email;
+    var password = req.body.password;
+    var sql = `update user set email = ${email},password = ${password} where id = ${id}`;
+    //db.none
+    console.log('UPDATE:' + sql);
+    res.send(sql);
+});
+
 app.get('/users/:id', function (req, res) {
     var id = req.params.id;
     var sql = 'select * from users';
