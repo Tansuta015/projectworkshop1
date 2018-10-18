@@ -157,7 +157,7 @@ app.get('/product_delete/:id', function (req, res) {
     db.any(sql)
         .then(function (data) {
             console.log('DATA:' + data);
-            res.render('pages/products', { products: data })
+            res.redirect('/products')
 
         })
         .catch(function (error) {
@@ -174,7 +174,7 @@ app.get('/user_delete/:id', function (req, res) {
     db.any(sql)
         .then(function (data) {
             console.log('DATA:' + data);
-            res.render('pages/users', { users: data })
+            res.redirect('/users')
 
         })
         .catch(function (error) {
