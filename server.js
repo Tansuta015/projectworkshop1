@@ -29,9 +29,9 @@ app.get('/products', function (req, res) {
     //res.download('./static/index.html');
     //res.redirect('/about'); var pgp =require('pg-promise');
     var id = req.param('id');
-    var sql = 'select * from products';
+    var sql = 'select * from products order by id ASC';
     if (id) {
-        sql += ' where id =' + id;
+        sql += ' where id =' + id +'order by id ASC' ;
     }
     db.any(sql)
         .then(function (data) {
@@ -169,7 +169,7 @@ app.get('/user_delete/:id', function (req, res) {
     var id = req.params.id;
     var sql = 'DELETE FROM users';
     if (id) {
-        sql += ' where id =' + id;
+        sql += 'where id =' + id;
     }
     db.any(sql)
         .then(function (data) {
