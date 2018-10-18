@@ -165,7 +165,7 @@ app.get('/product_delete/:id', function (req, res) {
         })
 });
 //button deluser
-app.post('/users_delete/:id', function (req, res) {
+app.post('/user_delete/:id', function (req, res) {
     var id = req.params.id;
     var sql = 'DELETE FROM users';
     if (id) {
@@ -230,7 +230,7 @@ app.post('/addnewuser', function (req, res) {
 
 
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8081;
 app.listen(port, function () {
     console.log('App is running on http://localhost:' + port);
 });
