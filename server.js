@@ -165,7 +165,7 @@ app.get('/product_delete/:id', function (req, res) {
         })
 });
 //button deluser
-app.post('/user_delete/:id', function (req, res) {
+app.get('/user_delete/:id', function (req, res) {
     var id = req.params.id;
     var sql = 'DELETE FROM users';
     if (id) {
@@ -196,7 +196,7 @@ app.post('/addnewproduct', function(req,res){
     db.any(sql)
     .then(function (data) {
         console.log('DATA:' + data);
-        res.render('pages/products', { products: data })
+        res.redirect('/products')
 
     })
     .catch(function (error) {
@@ -220,7 +220,7 @@ app.post('/addnewuser', function (req, res) {
     db.any(sql)
         .then(function (data) {
             console.log('DATA:' + data);
-            res.render('pages/users', { users: data })
+            res.redirect('/users')
         })
 
         .catch(function (error) {
