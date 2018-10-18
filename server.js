@@ -132,6 +132,7 @@ app.get('/product_delete/:id', function (req, res) {
             console.log('ERROR:' + error);
         })
 });
+
 //addnew
 app.get('/addnewproduct', function(req,res){
     res.render('pages/addnewproduct');
