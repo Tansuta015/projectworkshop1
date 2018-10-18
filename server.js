@@ -106,7 +106,7 @@ app.post('/product/update', function (req, res) {
     db.any(sql)
     .then(function (data) {
         console.log('DATA:' + data);
-        res.render('pages/products', { products: data })
+        res.redirect('/products')
 
     })
     .catch(function (error) {
@@ -123,7 +123,7 @@ app.post('/user/update', function (req, res) {
     db.any(sql)
     .then(function (data) {
         console.log('DATA:' + data);
-        res.render('pages/users', { users: data })
+        res.redirect('/users')
     })
     .catch(function (error) {
         console.log('ERROR:' + error);
