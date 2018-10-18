@@ -32,13 +32,18 @@ alert('Do you want to delete product');
 <div class="form-group">
   <label for="">Creat At</label>
   <input type="datetime"
-    class='input-group date' id='datetimepicker1' name="creat at" id="" aria-describedby="helpId" placeholder=""><span class="input-group-addon">
-      <span class="glyphicon glyphicon-calendar"></span>
+    class="input-append date" name="creat at" id="datetimepicker1" aria-describedby="helpId" placeholder="">
+    <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input><span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      </i>
+    </span>
     <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script>                
+  $(function() {
+    $('#datetimepicker1').datetimepicker({
+      language: 'pt-BR'
+    });
+  });
+</script>
   <small id="helpId" class="form-text text-muted">Creat At</small>
 </div>
 
