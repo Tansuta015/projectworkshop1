@@ -133,8 +133,11 @@ app.get('/product_delete/:id', function (req, res) {
         })
 });
 
-//addnew
-app.get('/addnewproduct', function(req,res){
+//addnewproduct
+app.get('/newproduct', function(req,res){
+    res.render('pages/addnewproduct');
+})
+app.post('/addnewproduct', function(req,res){
     var id = req.body.id;
     var title = req.body.title;
     var price = req.body.price;
@@ -142,15 +145,21 @@ app.get('/addnewproduct', function(req,res){
     VALUES ('${id}', '${title}', '${price}')`;
     //db.none
     console.log('UPDATE:' + sql);
-   
-    res.render('pages/addnewproduct');
-})
+    db.any(sql)
+    .then(function (data) {
+        console.log('DATA:' + data);
+        res.render('pages/products', { products: data })
 
+    })
+    .catch(function (error) {
+        console.log('ERROR:' + error);
+    })
+    
+})
+//addnewuser
 app.get('/addnewuser', function(req,res){
     res.render('pages/addnewuser');
 })
-
-
 
 app.get('/users', function (req, res) {
     db.any('select * from users', )
