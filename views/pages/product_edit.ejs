@@ -28,12 +28,22 @@ alert('Do you want to delete product');
     class="form-control" value="<%= product.price %>" name="price" id="" aria-describedby="helpId" placeholder="">
   <small id="helpId" class="form-text text-muted">Product Price</small>
 </div>
-<!-- <div class="form-group">
-//   <label for="">Creat At</label>
-//   <input type="datetime"
-//     class="form-control" name="creat at" id="" aria-describedby="helpId" placeholder="">
-//   <small id="helpId" class="form-text text-muted">Creat At</small>
-// </div>-->
+<div class="form-group">
+<label for="">Creat At</label>
+<input type="datetime"
+ class="input-append date form_datetime"  <input size="16" type="text" value="" readonly name="creat at" id="" aria-describedby="helpId" placeholder="">
+ <span class="add-on"><i class="icon-th"></i></span>
+<small id="helpId" class="form-text text-muted">Creat At</small>
+</div>
+<script type="text/javascript">
+
+    $(".form_datetime").datetimepicker({
+
+        format: "dd MM yyyy - hh:ii"
+    });
+
+</script> 
+
 
 <a name="" id="" class="btn btn-secondary" href="/products" role="button">CANCLE</a>
 <button type="submit" class="btn btn-success">SAVE</button>
