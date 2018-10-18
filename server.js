@@ -76,8 +76,6 @@ app.get('/products/:pid', function (req, res) {
             console.log('ERROR:' + error);
 
         })
-
-
 });
 app.get('/users/:pid', function (req, res) {
     var pid = req.params.pid;
@@ -93,7 +91,6 @@ app.get('/users/:pid', function (req, res) {
             console.log('ERROR:' + error);
 
         })
-
 
 });
 //update data
