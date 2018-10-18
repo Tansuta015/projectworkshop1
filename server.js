@@ -43,6 +43,24 @@ app.get('/products', function (req, res) {
             console.log('ERROR:' + error);
         })
 });
+app.get('/users', function (req, res) {
+    //res.download('./static/index.html');
+    //res.redirect('/about'); var pgp =require('pg-promise');
+    var id = req.param('id');
+    var sql = 'select * from users';
+    if (id) {
+        sql += ' where id =' + id;
+    }
+    db.any(sql)
+        .then(function (data) {
+            console.log('DATA:' + data);
+            res.render('pages/users', { users: data })
+
+        })
+        .catch(function (error) {
+            console.log('ERROR:' + error);
+        })
+});
 
 app.get('/products/:pid', function (req, res) {
     var pid = req.params.pid;
