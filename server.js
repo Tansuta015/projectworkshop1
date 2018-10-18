@@ -142,7 +142,7 @@ app.get('/addnewproduct', function(req,res){
     VALUES ('${id}', '${title}', '${price}')`;
     //db.none
     console.log('UPDATE:' + sql);
-    res.send(sql);
+   
     res.render('pages/addnewproduct');
 })
 
