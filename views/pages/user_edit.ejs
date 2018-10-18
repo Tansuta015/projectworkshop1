@@ -1,4 +1,13 @@
 <% include ../partials/header %>
+<script language="javascript">
+function fncAlert(){
+
+alert('Do you want to delete product');
+
+}
+
+</script>
+
 <form action ="/user/update" method = "post">
 <div class="jumbotron">
 <h1 class="display-4">USERS</h1>
@@ -22,7 +31,6 @@
 </div>
 <a name="" id="" class="btn btn-success" href="/users" role="button">CANCLE</a>
 <button type="submit" class="btn btn-success">SAVE</button>
-<button type="submit" class="btn btn-danger">DELETE</button>
 <a name="" id="" OnClick="JavaScript:fncAlert();" class="btn btn-danger" href="/user_delete/<%= user.id %>" role="button">DELETE</a>
 
 </div>
