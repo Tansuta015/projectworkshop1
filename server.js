@@ -41,9 +41,7 @@ app.get('/products', function (req, res) {
         })
         .catch(function (error) {
             console.log('ERROR:' + error);
-
         })
-
 });
 
 app.get('/products/:pid', function (req, res) {
@@ -111,6 +109,23 @@ app.get('/users/:id', function (req, res) {
         .then(function (data) {
             console.log('DATA:' + data);
             res.render('pages/users', { users: data })
+
+        })
+        .catch(function (error) {
+            console.log('ERROR:' + error);
+        })
+});
+//button
+app.get('/product_delete/:id', function (req, res) {
+    var id = req.params.id;
+    var sql = 'DELETE FROM products';
+    if (id) {
+        sql += ' where id =' + id;
+    }
+    db.any(sql)
+        .then(function (data) {
+            console.log('DATA:' + data);
+            res.render('pages/products', { products: data })
 
         })
         .catch(function (error) {
