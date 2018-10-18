@@ -165,7 +165,7 @@ app.get('/product_delete/:id', function (req, res) {
         })
 });
 //button deluser
-app.get('/user_delete/:id', function (req, res) {
+app.post('/user_delete/:id', function (req, res) {
     var id = req.params.id;
     var sql = 'DELETE FROM users';
     if (id) {
