@@ -92,7 +92,7 @@ app.post('/product/update', function (req, res) {
 
     })
     .catch(function (error) {
-        console.log('UPDATE:' + sql);
+        console.log('ERROR:' + error);
     })
 });
 
