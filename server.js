@@ -138,7 +138,7 @@ app.get('/addnewproduct', function(req,res){
     var id = req.body.id;
     var title = req.body.title;
     var price = req.body.price;
-    var sql = `INSERT INTO products(id, title, price)
+    var sql = `INSERT INTO products (id, title, price)
     VALUES ('${id}', '${title}', '${price}')`;
     //db.none
     console.log('UPDATE:' + sql);
