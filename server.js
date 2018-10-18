@@ -120,8 +120,15 @@ app.post('/user/update', function (req, res) {
     var password = req.body.password;
     var sql = `update user set email = '${email}', password = ${password} where id = ${id}`;
     //db.none
-    console.log('UPDATE:' + sql);
-    
+    db.any(sql)
+    .then(function (data) {
+        console.log('DATA:' + data);
+        res.render('pages/users', { users: data })
+
+    })
+    .catch(function (error) {
+        console.log('ERROR:' + error);
+    })
 });
 
 app.get('/users/:id', function (req, res) {
