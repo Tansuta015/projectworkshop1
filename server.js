@@ -147,7 +147,7 @@ app.get('/users/:id', function (req, res) {
         })
 });
 
-//button delete
+//button delpro
 app.get('/product_delete/:id', function (req, res) {
     var id = req.params.id;
     var sql = 'DELETE FROM products';
@@ -169,7 +169,7 @@ app.get('/user_delete/:id', function (req, res) {
     var id = req.params.id;
     var sql = 'DELETE FROM users';
     if (id) {
-        sql += 'where id =' + id;
+        sql += ' where id =' + id;
     }
     db.any(sql)
         .then(function (data) {
@@ -181,7 +181,6 @@ app.get('/user_delete/:id', function (req, res) {
             console.log('ERROR:' + error);
         })
 });
-
 //addnewproduct
 app.get('/newproduct', function(req,res){
     res.render('pages/addnewproduct');
