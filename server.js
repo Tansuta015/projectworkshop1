@@ -18,12 +18,12 @@ app.get('/index', function (req, res) {
     res.render('pages/index');
 });
 
-app.get('/about', function (req, res) {
-    var name = 'Tansuta Ratkaew';
-    var hobbies = ['Music', 'Movie', 'Programming'];
-    var bdate = '09/08/1977'
-    res.render('pages/about', { fullname: name, hobbies: hobbies, bdate });
-});
+// app.get('/about', function (req, res) {
+//     var name = 'Tansuta Ratkaew';
+//     var hobbies = ['Music', 'Movie', 'Programming'];
+//     var bdate = '09/08/1977'
+//     res.render('pages/about', { fullname: name, hobbies: hobbies, bdate });
+// });
 // Display all products
 app.get('/products', function (req, res) {
     //res.download('./static/index.html');
@@ -91,7 +91,6 @@ app.post('/product/update', function (req, res) {
     res.send(sql);
 });
 
-
 app.get('/users/:id', function (req, res) {
     var id = req.params.id;
     var sql = 'select * from users';
@@ -108,7 +107,7 @@ app.get('/users/:id', function (req, res) {
             console.log('ERROR:' + error);
         })
 });
-
+//addnew
 app.get('/addnewproduct', function(req,res){
     res.render('pages/addnewproduct');
 })
@@ -116,6 +115,8 @@ app.get('/addnewproduct', function(req,res){
 app.get('/addnewuser', function(req,res){
     res.render('pages/addnewuser');
 })
+
+
 
 app.get('/users', function (req, res) {
     db.any('select * from users', )
