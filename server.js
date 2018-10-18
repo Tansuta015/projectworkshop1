@@ -83,10 +83,17 @@ app.post('/product/update', function (req, res) {
     var id = req.body.id;
     var title = req.body.title;
     var price = req.body.price;
-    var sql = `update products set title = '${title}',price = '${price}' where id = ${id}`;
+    var sql = `update products set title = ${title},price = ${price} where id = ${id}`;
     //db.none
-    console.log('UPDATE:' + sql);
-    res.send(sql);
+    db.any(sql)
+    .then(function (data) {
+        console.log('DATA:' + data);
+        res.render('pages/products', { products: data })
+
+    })
+    .catch(function (error) {
+        console.log('UPDATE:' + sql);
+    })
 });
 
 app.post('/user/update', function (req, res) {
