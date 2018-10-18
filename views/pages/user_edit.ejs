@@ -20,9 +20,10 @@
     class="form-control" value="<%= user.password %>" name="password" id="" aria-describedby="helpId" placeholder="">
   <small id="helpId" class="form-text text-muted">User Password</small>
 </div>
-<button type="submit" class="btn btn-secondary">CANCLE</button>
+<a name="" id="" class="btn btn-success" href="/users" role="button">CANCLE</a>
 <button type="submit" class="btn btn-success">SAVE</button>
 <button type="submit" class="btn btn-danger">DELETE</button>
+<a name="" id="" OnClick="JavaScript:fncAlert();" class="btn btn-danger" href="/user_delete/<%= user.id %>" role="button">DELETE</a>
 
 </div>
 </form>

@@ -95,7 +95,7 @@ app.post('/product/update', function (req, res) {
         console.log('ERROR:' + error);
     })
 });
-
+//update user
 app.post('/user/update', function (req, res) {
     var id = req.body.id;
     var email = req.body.email;
@@ -122,7 +122,8 @@ app.get('/users/:id', function (req, res) {
             console.log('ERROR:' + error);
         })
 });
-//button
+
+//button delete
 app.get('/product_delete/:id', function (req, res) {
     var id = req.params.id;
     var sql = 'DELETE FROM products';
@@ -133,6 +134,23 @@ app.get('/product_delete/:id', function (req, res) {
         .then(function (data) {
             console.log('DATA:' + data);
             res.render('pages/products', { products: data })
+
+        })
+        .catch(function (error) {
+            console.log('ERROR:' + error);
+        })
+});
+//button deluser
+app.get('/user_delete/:id', function (req, res) {
+    var id = req.params.id;
+    var sql = 'DELETE FROM users';
+    if (id) {
+        sql += ' where id =' + id;
+    }
+    db.any(sql)
+        .then(function (data) {
+            console.log('DATA:' + data);
+            res.render('pages/users', { users: data })
 
         })
         .catch(function (error) {
@@ -164,11 +182,18 @@ app.post('/addnewproduct', function(req,res){
     
 })
 //addnewuser
-app.get('/addnewuser', function(req,res){
+app.get('/newuser', function(req,res){
     res.render('pages/addnewuser');
 })
 
-app.get('/users', function (req, res) {
+app.post('/addnewuser', function (req, res) {
+    var id = req.body.id;
+    var email = req.body.email;
+    var password = req.body.password;
+    var sql = `INSERT INTO users (id, email, password)
+    VALUES ('${id}', '${email}', '${password}')`;
+    //db.none
+    console.log('UPDATE:' + sql);
     db.any('select * from users', )
         .then(function (data) {
             console.log('DATA:' + data);
