@@ -47,9 +47,9 @@ app.get('/users', function (req, res) {
     //res.download('./static/index.html');
     //res.redirect('/about'); var pgp =require('pg-promise');
     var id = req.param('id');
-    var sql = 'select * from users  order by id ASC';
+    var sql = 'select * from users';
     if (id) {
-        sql += ' where id =' + id +'order by id ASC';
+        sql += ' where id =' + id;
     }
     db.any(sql)
         .then(function (data) {
