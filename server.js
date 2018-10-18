@@ -194,7 +194,7 @@ app.post('/addnewuser', function (req, res) {
     VALUES ('${id}', '${email}', '${password}')`;
     //db.none
     console.log('UPDATE:' + sql);
-    db.any('select * from users', )
+    db.any(sql)
         .then(function (data) {
             console.log('DATA:' + data);
             res.render('pages/users', { users: data })
