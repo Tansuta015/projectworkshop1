@@ -130,7 +130,7 @@ app.post('/user/update', function (req, res) {
 });
 
 app.get('/users/:id', function (req, res) {
-    var time = moment().format('MMM Do YYYY, h:mm:ss a');
+   
     var id = req.params.id;
     var sql = 'select * from users';
     if (id) {
@@ -139,7 +139,7 @@ app.get('/users/:id', function (req, res) {
     db.any(sql)
         .then(function (data) {
             console.log('DATA:' + data);
-            res.render('pages/users', { users: data,time:time })
+            res.render('pages/users', { users: data })
 
         })
         .catch(function (error) {
@@ -206,7 +206,8 @@ app.post('/addnewproduct', function(req,res){
 })
 //addnewuser
 app.get('/newuser', function(req,res){
-    res.render('pages/addnewuser');
+    var time = moment().format('MMM Do YYYY, h:mm:ss a');
+    res.render('pages/addnewuser',{time:time});
 })
 
 app.post('/addnewuser', function (req, res) {
