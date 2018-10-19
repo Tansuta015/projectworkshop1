@@ -228,10 +228,8 @@ app.post('/addnewuser', function (req, res) {
         })
 });
 //datetime
-app.get('/user_datetime', function(req,res){
- 
- response.render('pages/user_edit');
-})
+
+
 
 
 
