@@ -55,14 +55,15 @@ app.get('/users', function (req, res) {
 });
 //productpid
 app.get('/products/:pid', function (req, res) {
-    var times = moment().format('MMMM Do YYYY, h:mm:ss a');
+    
     var pid = req.params.pid;
+    var times = moment().format('MMMM Do YYYY, h:mm:ss a');
     var sql = "select * from products where id =" + pid + 'order by id asc';
 
     db.any(sql)
         .then(function (data) {
 
-            res.render('pages/product_edit', { product: data[0],time: times })
+            res.render('pages/product_edit', { product: data[0],time: times});
 
         })
         .catch(function (error) {
