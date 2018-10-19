@@ -116,13 +116,13 @@ app.post('/user/update', function (req, res) {
     var id = req.body.id;
     var email = req.body.email;
     var password = req.body.password;
-    var time = moment().format('MMM Do YYYY, h:mm:ss a');
+    
     var sql = `update users set email = '${email}', password = ${password} where id = ${id}`;
     //db.none
     db.any(sql)
     .then(function (data) {
         console.log('DATA:' + data);
-        res.redirect('/users',{ time:time});
+        res.redirect('/users');
     })
     .catch(function (error) {
         console.log('ERROR:' + error);
@@ -130,6 +130,7 @@ app.post('/user/update', function (req, res) {
 });
 
 app.get('/users/:id', function (req, res) {
+    var time = moment().format('MMM Do YYYY, h:mm:ss a');
     var id = req.params.id;
     var sql = 'select * from users';
     if (id) {
@@ -138,7 +139,7 @@ app.get('/users/:id', function (req, res) {
     db.any(sql)
         .then(function (data) {
             console.log('DATA:' + data);
-            res.render('pages/users', { users: data })
+            res.render('pages/users', { users: data,time:time })
 
         })
         .catch(function (error) {
@@ -229,7 +230,7 @@ app.post('/addnewuser', function (req, res) {
 //datetime
 app.get('/user_datetime', function(req,res){
  
- response.render('pages/users');
+ response.render('pages/user_edit');
 })
 
 
