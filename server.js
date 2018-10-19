@@ -79,13 +79,13 @@ app.get('/products/:pid', function (req, res) {
 });
 app.get('/users/:pid', function (req, res) {
     var pid = req.params.pid;
-    var time = moment().format('MMM Do YYYY, h:mm:ss a');
+    
     var sql = "select * from users where id =" + pid;
 
     db.any(sql)
         .then(function (data) {
 
-            res.render('pages/user_edit', { user: data[0], time:time })
+            res.render('pages/user_edit', { user: data[0] })
 
         })
         .catch(function (error) {
@@ -116,12 +116,13 @@ app.post('/user/update', function (req, res) {
     var id = req.body.id;
     var email = req.body.email;
     var password = req.body.password;
+    var time = moment().format('MMM Do YYYY, h:mm:ss a');
     var sql = `update users set email = '${email}', password = ${password} where id = ${id}`;
     //db.none
     db.any(sql)
     .then(function (data) {
         console.log('DATA:' + data);
-        res.redirect('/users')
+        res.redirect('/users',{ time:time});
     })
     .catch(function (error) {
         console.log('ERROR:' + error);
