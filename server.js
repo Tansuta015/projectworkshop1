@@ -63,7 +63,7 @@ app.get('/products/:pid', function (req, res) {
     db.any(sql)
         .then(function (data) {
 
-            res.render('pages/product_edit', { product: data[0],time: times});
+            res.render('pages/product_edit', { product: data[0], time: times });
 
         })
         .catch(function (error) {
@@ -80,7 +80,7 @@ app.get('/users/:pid', function (req, res) {
     db.any(sql)
         .then(function (data) {
 
-            res.render('pages/user_edit', { user: data[0],time: times});
+            res.render('pages/user_edit', { user: data[0], time: times });
 
         })
         .catch(function (error) {
@@ -95,7 +95,7 @@ app.post('/product/update', function (req, res) {
     var id = req.body.id;
     var title = req.body.title;
     var price = req.body.price;
-    var sql = `update products set title = '${title}',price = ${price} where id = ${id}`;
+    var sql = `update products set title = '${title}',price = '${price}' where id = '${id}' `;
     //db.none
     db.any(sql)
         .then(function (data) {
@@ -121,7 +121,7 @@ app.get('/users/:id', function (req, res) {
     db.any(sql)
         .then(function (data) {
             console.log('DATA:' + data);
-            res.render('pages/users', { users: data})
+            res.render('pages/users', { users: data })
 
         })
         .catch(function (error) {
@@ -135,16 +135,16 @@ app.post('/user/update', function (req, res) {
     var email = req.body.email;
     var password = req.body.password;
 
-    var sql = `update users set email = '${email}', password = '${password}' where id = '${id}'`;
+    var sql = `update users set email = '${email}', password = '${password}' where id = '${id}' `;
     db.none(sql);
-    // db.any(sql)
-    //     .then(function (data) {
-    //         console.log('DATA:' + data);
+    db.any(sql)
+        .then(function (data) {
+            console.log('DATA:' + data);
             res.redirect('/users');
-    //     })
-    //     .catch(function (error) {
-    //         console.log('ERROR:' + error);
-    //     })
+        })
+        .catch(function (error) {
+            console.log('ERROR:' + error);
+        })
 });
 
 //delete product button
