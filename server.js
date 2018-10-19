@@ -225,9 +225,9 @@ app.post('/addnewuser', function (req, res) {
         })
 });
 //datetime
-app.get('/user', function(req,res){
+app.get('/user_datetime', function(req,res){
  var time = moment().format('MMM Do YYYY, h:mm:ss a');
- response.render('panges/users',{time: time});
+ response.render('panges/users',  {time: time});
 })
 
 
