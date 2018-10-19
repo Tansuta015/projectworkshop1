@@ -140,7 +140,7 @@ app.post('/user/update', function (req, res) {
     // db.any(sql)
     //     .then(function (data) {
     //         console.log('DATA:' + data);
-    //         res.redirect('/users');
+            res.redirect('/users');
     //     })
     //     .catch(function (error) {
     //         console.log('ERROR:' + error);
