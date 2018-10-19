@@ -35,14 +35,14 @@ alert('Do you want to delete product');
   <input type="text"
     class="form-control" value="<%= time %>" name="creat at" id="" aria-describedby="helpId" placeholder="" disabled>
   <small id="helpId" class="form-text text-muted">Creat At</small>
-  <div class='input-group date' id='datetimepicker1'>
-    <input type='text' class="form-control" />
-    <span class="input-group-addon">
-        <span class="glyphicon glyphicon-calendar"></span>
-    </span>
+  
 </div>
+<div class='input-group date' id='datetimepicker1'>
+  <input type='text' class="form-control"/>
+  <span class="input-group-addon">
+      <span class="glyphicon glyphicon-calendar"></span>
+  </span>
 </div>
-
 <a name="" id="" class="btn btn-secondary" href="/users" role="button">CANCLE</a>
 <button type="submit" class="btn btn-success">SAVE</button>
 <a name="" id="" OnClick="JavaScript:fncAlert();" class="btn btn-danger" href="/user_delete/<%= user.id %>" role="button">DELETE</a>
