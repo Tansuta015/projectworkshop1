@@ -79,12 +79,13 @@ app.get('/products/:pid', function (req, res) {
 });
 app.get('/users/:pid', function (req, res) {
     var pid = req.params.pid;
+    var time = moment().format('MMM Do YYYY, h:mm:ss a');
     var sql = "select * from users where id =" + pid;
 
     db.any(sql)
         .then(function (data) {
 
-            res.render('pages/user_edit', { user: data[0] })
+            res.render('pages/user_edit', { user: data[0], time:time })
 
         })
         .catch(function (error) {
@@ -226,8 +227,8 @@ app.post('/addnewuser', function (req, res) {
 });
 //datetime
 app.get('/user_datetime', function(req,res){
- var time = moment().format('MMM Do YYYY, h:mm:ss a');
- response.render('panges/users',  {time: time});
+ 
+ response.render('panges/users');
 })
 
 
