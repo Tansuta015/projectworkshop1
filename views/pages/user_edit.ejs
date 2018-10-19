@@ -7,6 +7,11 @@ alert('Do you want to delete product');
 }
 
 </script>
+<script type="text/javascript">
+  $(function () {
+      $('#datetimepicker1').datetimepicker();
+  });
+</script>
 
 <form action ="/user/update" method = "post">
 <div class="jumbotron">
@@ -49,10 +54,6 @@ alert('Do you want to delete product');
 
 </div>
 </form>
-<script type="text/javascript">
-  $(function () {
-      $('#datetimepicker1').datetimepicker();
-  });
-</script>
+
 
 <% include ../partials/footer %>
