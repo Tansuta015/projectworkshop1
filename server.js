@@ -71,6 +71,24 @@ app.get('/products/:pid', function (req, res) {
 
         })
 });
+//user pid
+app.get('/users/:pid', function (req, res) {
+    var pid = req.params.pid;
+    var times = moment().format('MMMM Do YYYY, h:mm:ss a');
+    var sql = "select * from users where id =" + pid;
+
+    db.any(sql)
+        .then(function (data) {
+
+            res.render('pages/user_edit', { user: data[0],time: times});
+
+        })
+        .catch(function (error) {
+            console.log('ERROR:' + error);
+
+        })
+
+});
 
 //update product_edit
 app.post('/product/update', function (req, res) {
@@ -91,24 +109,7 @@ app.post('/product/update', function (req, res) {
 });
 
 
-//user pid
-app.get('/users/:pid', function (req, res) {
-    var pid = req.params.pid;
 
-    var sql = "select * from users where id =" + pid;
-
-    db.any(sql)
-        .then(function (data) {
-
-            res.render('pages/user_edit', { user: data[0] })
-
-        })
-        .catch(function (error) {
-            console.log('ERROR:' + error);
-
-        })
-
-});
 //user
 app.get('/users/:id', function (req, res) {
 
