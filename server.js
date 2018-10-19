@@ -217,6 +217,7 @@ app.post('/addnewuser', function (req, res) {
     db.any(sql)
         .then(function (data) {
             console.log('DATA:' + data);
+            res.send(data);
             res.redirect('/users')
         })
 
