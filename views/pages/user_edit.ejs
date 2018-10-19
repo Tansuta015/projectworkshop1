@@ -7,11 +7,7 @@ alert('Do you want to delete product');
 }
 
 </script>
-<script type="text/javascript">
-  $(".form_datetime").datetimepicker({
-      format: "dd MM yyyy - hh:ii"
-  });
-</script>   
+  
 
 <form action ="/user/update" method = "post">
 <div class="jumbotron">
@@ -50,6 +46,11 @@ alert('Do you want to delete product');
 <button type="submit" class="btn btn-success">SAVE</button>
 <a name="" id="" OnClick="JavaScript:fncAlert();" class="btn btn-danger" href="/user_delete/<%= user.id %>" role="button">DELETE</a>
 
+<script type="text/javascript">
+  $(".form_datetime").datetimepicker({
+      format: "dd MM yyyy - hh:ii"
+  });
+</script> 
 </div>
 </form>
 
