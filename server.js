@@ -224,6 +224,11 @@ app.post('/addnewuser', function (req, res) {
             console.log('ERROR:' + error);
         })
 });
+//datetime
+app.get('/user', function(req,res){
+ var time = moment().format('MMM Do YYYY, h:mm:ss a');
+ response.render('panges/users',{time: time});
+})
 
 
 
