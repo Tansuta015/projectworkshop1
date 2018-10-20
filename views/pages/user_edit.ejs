@@ -34,10 +34,15 @@ alert('Do you want to delete product');
 <div class="form-group">
   <label for="">Creat At</label>
   <input type="text"
-    class="form-control" value="<%= time %>" name="creat at" id="" aria-describedby="helpId" placeholder="" disabled>
+    class="form-control" value="<%= time %>" name="creat at" id="datepicker" width="276" aria-describedby="helpId" placeholder="" disabled>
   <small id="helpId" class="form-text text-muted">Creat At</small>
-  
+  <script>
+      $('#datepicker').datepicker({
+      showOtherMonths: true
+  });
+  </script>
 </div>
+
 
 <a name="" id="" class="btn btn-secondary" href="/users" role="button">CANCLE</a>
 <button type="submit" class="btn btn-success">SAVE</button>
