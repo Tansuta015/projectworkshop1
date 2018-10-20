@@ -1,37 +1,11 @@
 <% include ../partials/header %>
-<script language="javascript">
-function fncAlert(){
-
-alert('Do you want to delete product');
-
-}
-
-</script>
 <script language="JavaScript">
-  function chkConfirm()
-  
-  {
-  
-  if(confirm('Do you want to delete product')==true)
- 
-  {
- 
-  
-  
- 
-  }
- 
-  else
- 
-  {
- 
-  alert('You selected to cancel.');
-  
-  }
-  
-  }
-  
-  </script>
+  function chkConfirm(){
+    if(confirm('Do you want to delete product')==true){
+   }else{
+    alert('You selected to cancel.');}
+}
+</script>
 <form action ="/product/update" method = "post">
 <div class="jumbotron">
 <h1 class="display-4">PRODUCT</h1>
