@@ -5,9 +5,7 @@ function fncAlert(){
 alert('Do you want to delete product');
 
 }
-$('.datepicker').datepicker({
-    startDate: '-3d'
-});
+
 </script>
   
 
@@ -36,7 +34,7 @@ $('.datepicker').datepicker({
 <div class="form-group">
   <label for="">Creat At</label>
   <input type="text"
-    class="datepicker" data-date-format="mm/dd/yyyy" name="creat at" id="" aria-describedby="helpId" placeholder="" disabled>
+    class="form-control" value="<%= time %>" name="creat at" id="" aria-describedby="helpId" placeholder="" disabled>
   <small id="helpId" class="form-text text-muted">Creat At</small>
   
 </div>
