@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Email</th>
+            <th>password</th>
+             
+        </tr>
+    </thead>
+    <tbody id="myTable">
+    <%reports.forEach(function(report){ %>
+<tr>
+            <td scope="row"><%= report.id %></td>
+            <td><%= report.title %></td>
+            <td><%= report.price %></td>
+            <td><%= report.email %></td>
+            <td><%= report.password %></td>
+            <td>
+            <a  class="btn btn-primary" href="/reports/<%= report.id %>" role="button">EDIT</a>
+            </td>
+        </tr>
+    <% }); %>
+        
+        
+    </tbody>
+</table>

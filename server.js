@@ -230,7 +230,7 @@ app.post('/addnewuser', function (req, res) {
         })
 });
 //datetime
-
+app.get()
 
 
 
