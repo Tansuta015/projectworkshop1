@@ -7,6 +7,32 @@ alert('Do you want to delete product');
 }
 
 </script>
+<script language="JavaScript">
+  function chkConfirm()
+  
+  {
+  
+  if(confirm('Do you want to delete product')==true)
+ 
+  {
+ 
+  alert('Do you want to delete product');
+  
+  
+ 
+  }
+ 
+  else
+ 
+  {
+ 
+  alert('You selected to cancel.');
+  
+  }
+  
+  }
+  
+  </script>
 <form action ="/product/update" method = "post">
 <div class="jumbotron">
 <h1 class="display-4">PRODUCT</h1>
@@ -41,7 +67,7 @@ alert('Do you want to delete product');
 
 <a name="" id="" class="btn btn-secondary" href="/products" role="button">CANCLE</a>
 <button type="submit" class="btn btn-success">SAVE</button>
-<a name="" id="" OnClick="JavaScript:fncAlert();" class="btn btn-danger" href="/product_delete/<%= product.id %>" role="button">DELETE</a>
+<a name="" id="" OnClick="chkConfirm()" class="btn btn-danger" href="/product_delete/<%= product.id %>" role="button">DELETE</a>
 
 </div>
 </form>
