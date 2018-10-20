@@ -229,8 +229,27 @@ app.post('/addnewuser', function (req, res) {
             console.log('ERROR:' + error);
         })
 });
+//report
+// app.get('/reports/:id', function (req, res) {
+//     var id = req.params.id;
+//     var sql = 'select * from reports';
+//     if (id) {
+//         sql += ' where id =' + id;
+//     }
+//     db.any(sql)
+//         .then(function (data) {
+//             console.log('DATA:' + data);
+//             res.render('pages/reports', { reports: data })
+
+//         })
+//         .catch(function (error) {
+//             console.log('ERROR:' + error);
+//         })
+// });
 //datetime
-//app.get()
+app.get('/datetime', function (req, res) {
+    res.render('pages/addnewuser');
+})
 
 
 
