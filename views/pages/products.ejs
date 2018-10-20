@@ -1,45 +1,49 @@
 <% include ../partials/header %>
 <div class="container">
-    <h2>Search: </h2>
+    <h3>Search Product: </h3>
     <input class="form-control" id="myInput" type="text" placeholder="Search..">
     <br>
     <table class="table table-bordered table-striped">
-        </div>
+</div>
 <table class="table">
     <thead>
         <tr>
             <th>ID</th>
             <th>Title</th>
             <th>Price</th>
-            
-            <th><a  class="btn btn-danger" href="/newproduct" role="button">ADD NEW</a></th>
+
+            <th><a class="btn btn-danger" href="/newproduct" role="button">ADD NEW</a></th>
 
         </tr>
     </thead>
     <tbody id="myTable">
-    <%products.forEach(function(product){ %>
-<tr>
-            <td scope="row"><%= product.id %></td>
-            <td><%= product.title %></td>
-            <td><%= product.price %></td>
+        <%products.forEach(function(product){ %>
+        <tr>
+            <td scope="row">
+                <%= product.id %>
+            </td>
             <td>
-            <a  class="btn btn-primary" href="/products/<%= product.id %>" role="button">EDIT</a>
+                <%= product.title %>
+            </td>
+            <td>
+                <%= product.price %>
+            </td>
+            <td>
+                <a class="btn btn-primary" href="/products/<%= product.id %>" role="button">EDIT</a>
             </td>
         </tr>
-    <% }); %>
-        
-      
+        <% }); %>
+
+
     </tbody>
 </table>
 <script>
-        $(document).ready(function(){
-          $("#myInput").on("keyup", function() {
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
             var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function() {
-              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
-          });
         });
-        </script>
-
- 
+    });
+</script>
