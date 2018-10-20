@@ -34,21 +34,8 @@
   <input type="text"
     class="form-control" value="<%= time %>"name="creat at" id="" aria-describedby="helpId" placeholder="" disabled>
   <small id="helpId" class="form-text text-muted">Creat At</small>
-  <div id="datetimepicker1" class="input-append date">
-      <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
-      <span class="add-on">
-        <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-        </i>
-      </span>
-    </div>
-    <script type="text/javascript">
-      $(function() {
-        $('#datetimepicker1').datetimepicker({
-          language: 'pt-BR'
-        });
-      });
-    </script>
-    
+  
+
 <a name="" id="" class="btn btn-secondary" href="/products" role="button">CANCLE</a>
 <button type="submit" class="btn btn-success">SAVE</button>
 <a name="" id="" name="btnConfirm" value="Confirm" OnClick="chkConfirm()" class="btn btn-danger" href="/product_delete/<%= product.id %>" role="button">DELETE</a>
