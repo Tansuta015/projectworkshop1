@@ -3,7 +3,7 @@
   function chkConfirm(){
     if(confirm('Do you want to delete product')==true){
      
-      window.location.assign("/product_delete/<%= product.id %>")
+      location.href = "/product_delete/<%= product.id %>"
    }else{
     return(null);
   }
