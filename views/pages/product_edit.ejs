@@ -36,24 +36,28 @@
   <small id="helpId" class="form-text text-muted">Creat At</small>
 </div>
 <div class="container">
+    <br />
     <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
+      <div class='col-sm-3'>
+        <div class="form-group">
+          <div id="filterDate2">
+            
+            <!-- Datepicker as text field -->         
+            <div class="input-group date" data-date-format="dd.mm.yyyy">
+              <input  type="text" class="form-control" placeholder="dd.mm.yyyy">
+              <div class="input-group-addon" >
+                <span class="glyphicon glyphicon-th"></span>
+              </div>
             </div>
+            
+          </div>    
         </div>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script>
+      </div>
     </div>
-</div>
+  </div>
+  <script>
+    $('.input-group.date').datepicker({format: "dd.mm.yyyy"}); 
+  </script>
 
 
 
