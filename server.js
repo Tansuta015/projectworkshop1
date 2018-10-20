@@ -247,7 +247,7 @@ app.post('/addnewuser', function (req, res) {
 //         })
 // });
 //datetime
-app.get('/datetime', function (req, res) {
+app.post('/datetime', function (req, res) {
     res.render('pages/addnewuser');
 })
 
