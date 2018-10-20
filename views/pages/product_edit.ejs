@@ -35,6 +35,13 @@
     class="form-control" value="<%= time %>"name="creat at" id="" aria-describedby="helpId" placeholder="" disabled>
   <small id="helpId" class="form-text text-muted">Creat At</small>
   
+  <input id="datepicker" width="276" />
+  <script>
+      $('#datepicker').datepicker({
+          uiLibrary: 'bootstrap4'
+      });
+  </script>
+  
 
 <a name="" id="" class="btn btn-secondary" href="/products" role="button">CANCLE</a>
 <button type="submit" class="btn btn-success">SAVE</button>
