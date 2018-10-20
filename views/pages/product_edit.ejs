@@ -34,19 +34,20 @@
   <input type="text"
     class="form-control" value="<%= time %>"name="creat at" id="" aria-describedby="helpId" placeholder="" disabled>
   <small id="helpId" class="form-text text-muted">Creat At</small>
-  
+</div>
+<div>
   <input id="datepicker" width="276" />
   <script>
       $('#datepicker').datepicker({
           uiLibrary: 'bootstrap4'
       });
   </script>
-  
-
+  </div>
+<div>
 <a name="" id="" class="btn btn-secondary" href="/products" role="button">CANCLE</a>
 <button type="submit" class="btn btn-success">SAVE</button>
 <a name="" id="" name="btnConfirm" value="Confirm" OnClick="chkConfirm()" class="btn btn-danger" href="/product_delete/<%= product.id %>" role="button">DELETE</a>
-
+</div>
 </div>
 </form>
 
