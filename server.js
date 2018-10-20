@@ -230,22 +230,9 @@ app.post('/addnewuser', function (req, res) {
         })
 });
 //report
-// app.get('/reports/:id', function (req, res) {
-//     var id = req.params.id;
-//     var sql = 'select * from reports';
-//     if (id) {
-//         sql += ' where id =' + id;
-//     }
-//     db.any(sql)
-//         .then(function (data) {
-//             console.log('DATA:' + data);
-//             res.render('pages/reports', { reports: data })
-
-//         })
-//         .catch(function (error) {
-//             console.log('ERROR:' + error);
-//         })
-// });
+app.get('/reports', function (req, res) {
+    res.render('pages/reports');
+});
 //datetime
 app.post('/datetime', function (req, res) {
     res.render('pages/addnewuser');
