@@ -200,15 +200,14 @@ app.post('/addnewproduct', function (req, res) {
     console.log('UPDATE:' + sql);
     db.any(sql)
         .then(function (data) {
-            
-            res.redirect('/products')
-
+            res.redirect('/products', { products: data[0], time : time })
         })
         .catch(function (error) {
             console.log('ERROR:' + error);
         })
 
 })
+
 //addnewuser
 app.get('/newuser', function (req, res) {
     res.render('pages/addnewuser');
