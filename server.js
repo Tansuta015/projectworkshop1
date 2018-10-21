@@ -192,13 +192,14 @@ app.post('/addnewproduct', function (req, res) {
     var id = req.body.id;
     var title = req.body.title;
     var price = req.body.price;
+    var times = moment().format();
     var sql = `INSERT INTO products (id, title, price)
     VALUES ('${id}', '${title}', '${price}')`;
     //db.none
     console.log('UPDATE:' + sql);
     db.any(sql)
         .then(function (data) {
-            console.log('DATA:' + data);
+            console.log('DATA:' + data,{ time : times});
             res.redirect('/products')
 
         })
