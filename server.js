@@ -229,7 +229,7 @@ app.post('/addnewuser', function (req, res) {
             console.log('ERROR:' + error);
         })
 });
-// report
+// report_product
 app.get('/report_product', function (req, res) {
     
     var sql = 'select * from products order by price DESC limit 15';
@@ -237,18 +237,30 @@ app.get('/report_product', function (req, res) {
     db.any(sql)
         .then(function (data) {
             console.log('DATA:' + data);
-            res.render('pages/reports_product', { products: data })
+            res.render('pages/report_product', { products: data })
 
         })
         .catch(function (error) {
             console.log('ERROR:' + error);
         })
-
-
-
-
-
 });
+
+// report_user
+app.get('/report_user', function (req, res) {
+    
+    var sql = 'select * from users order by price DESC limit 15';
+    
+    db.any(sql)
+        .then(function (data) {
+            console.log('DATA:' + data);
+            res.render('pages/report_user', { users: data })
+
+        })
+        .catch(function (error) {
+            console.log('ERROR:' + error);
+        })
+});
+
 //datetime
 // app.post('/datetime', function (req, res) {
 //     res.render('pages/addnewuser');
