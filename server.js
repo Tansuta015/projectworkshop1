@@ -229,11 +229,27 @@ app.post('/addnewuser', function (req, res) {
             console.log('ERROR:' + error);
         })
 });
-//report
-// app.get('/reports', function (req, res) {
-//     res.render('pages/reports');
-// });
-// //datetime
+// report
+app.get('/report_product', function (req, res) {
+    res.render('pages/report_product');
+    var sql = 'select * from products order by price DESC';
+    
+    db.any(sql)
+        .then(function (data) {
+            console.log('DATA:' + data);
+            res.render('pages/products', { products: data })
+
+        })
+        .catch(function (error) {
+            console.log('ERROR:' + error);
+        })
+
+
+
+
+
+});
+//datetime
 // app.post('/datetime', function (req, res) {
 //     res.render('pages/addnewuser');
 // })
