@@ -254,9 +254,7 @@ app.get('/report_product', function (req, res) {
 // report_user
 app.get('/report_user', function (req, res) {
 
-    var sql = SELECT users.id, title,price
-               FROM users
-               INNER JOIN products ON products.id=users.id order by price DESC;
+    var sql = 'SELECT users.id, title,price FROM users INNER JOIN products ON products.id = users.id order by price DESC';
 
     db.any(sql)
         .then(function (data) {
