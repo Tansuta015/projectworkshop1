@@ -200,7 +200,7 @@ app.post('/addnewproduct', function (req, res) {
     console.log('UPDATE:' + sql);
     db.any(sql)
         .then(function (data) {
-            res.redirect('/products', { products: data[0], time : time })
+            res.redirect('/products');
         })
         .catch(function (error) {
             console.log('ERROR:' + error);
