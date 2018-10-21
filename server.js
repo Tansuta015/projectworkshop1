@@ -235,7 +235,6 @@ app.post('/addnewuser', function (req, res) {
 });
 
 
-
 // report_product
 app.get('/report_product', function (req, res) {
 
