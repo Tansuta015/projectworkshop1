@@ -249,7 +249,7 @@ app.get('/report_product', function (req, res) {
 // report_user
 app.get('/report_user', function (req, res) {
 
-    var sql = 'select * from users ';
+    var sql = 'select * from users order by details limit 15 ';
 
     db.any(sql)
         .then(function (data) {
