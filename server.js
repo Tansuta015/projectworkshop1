@@ -232,7 +232,7 @@ app.post('/addnewuser', function (req, res) {
 // report
 app.get('/report_product', function (req, res) {
     
-    var sql = 'select * from products order by price DESC';
+    var sql = 'select * from products order by price DESC limit 15';
     
     db.any(sql)
         .then(function (data) {
