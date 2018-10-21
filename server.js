@@ -193,7 +193,7 @@ app.post('/addnewproduct', function (req, res) {
     var id = req.body.id;
     var title = req.body.title;
     var price = req.body.price;
-   
+    var time = req.body.time;
     var sql = `INSERT INTO products (id, title, price)
     VALUES ('${id}', '${title}', '${price}')`;
     //db.none
