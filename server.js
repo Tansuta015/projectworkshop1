@@ -230,13 +230,13 @@ app.post('/addnewuser', function (req, res) {
         })
 });
 //report
-app.get('/reports', function (req, res) {
-    res.render('pages/reports');
-});
-//datetime
-app.post('/datetime', function (req, res) {
-    res.render('pages/addnewuser');
-})
+// app.get('/reports', function (req, res) {
+//     res.render('pages/reports');
+// });
+// //datetime
+// app.post('/datetime', function (req, res) {
+//     res.render('pages/addnewuser');
+// })
 
 
 
