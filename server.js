@@ -57,7 +57,7 @@ app.get('/users', function (req, res) {
 //productpid
 app.get('/products/:pid', function (req, res) {
     var pid = req.params.pid;
-    var times = moment().format('MMMM Do YYYY, h:mm:ss a');
+    var times = moment().format();
     var sql = "select * from products where id =" + pid + 'order by id asc';
     
 
@@ -186,20 +186,21 @@ app.get('/user_delete/:id', function (req, res) {
 
 //addnewproduct
 app.get('/newproduct', function (req, res) {
-    res.render('pages/addnewproduct');
+    var time = moment().format();
+    res.render('pages/addnewproduct',{time:time});
 })
 app.post('/addnewproduct', function (req, res) {
     var id = req.body.id;
     var title = req.body.title;
     var price = req.body.price;
-    var times = moment().format();
+   
     var sql = `INSERT INTO products (id, title, price)
     VALUES ('${id}', '${title}', '${price}')`;
     //db.none
     console.log('UPDATE:' + sql);
     db.any(sql)
         .then(function (data) {
-            console.log('DATA:' + data,{ time : times});
+            
             res.redirect('/products')
 
         })
