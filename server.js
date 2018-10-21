@@ -218,6 +218,7 @@ app.post('/addnewuser', function (req, res) {
     var id = req.body.id;
     var email = req.body.email;
     var password = req.body.password;
+    var time = req.body.time;
     var sql = `INSERT INTO users (id, email, password,created_at)
     VALUES ('${id}', '${email}', '${password}','${time}')`;
     //db.none
@@ -232,6 +233,9 @@ app.post('/addnewuser', function (req, res) {
             console.log('ERROR:' + error);
         })
 });
+
+
+
 // report_product
 app.get('/report_product', function (req, res) {
 
