@@ -4,17 +4,17 @@
 <table class="table">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Price</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Tags</th>
         </tr>
     </thead>
     <tbody id="myTable">
     <%users.forEach(function(user){ %>
 <tr>
-            <td scope="row"><%= user.id %></td>
-            <td><%= user.title %></td>
-            <td><%= user.price%></td>
+            <td scope="row"><%= user.name %></td>
+            <td><%= user.Quantity %></td>
+            <td><%= user.tags %></td>
             <td>
             </td>
         </tr>
