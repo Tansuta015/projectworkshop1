@@ -231,13 +231,13 @@ app.post('/addnewuser', function (req, res) {
 });
 // report
 app.get('/report_product', function (req, res) {
-    res.render('pages/report_product');
+    
     var sql = 'select * from products order by price DESC';
     
     db.any(sql)
         .then(function (data) {
             console.log('DATA:' + data);
-            res.render('pages/products', { products: data })
+            res.render('pages/report_product', { products: data })
 
         })
         .catch(function (error) {
