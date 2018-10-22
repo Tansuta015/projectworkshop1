@@ -237,8 +237,8 @@ app.post('/addnewuser', function (req, res) {
 
 // report_product
 app.get('/report_product', function (req, res) {
- 
-    var sql = 'select * from products order by price DESC limit 10';
+    var sql = 'SELECT title, SUM(price) AS price FROM products GROUP BY ROLLUP (title) ORDER BY title';
+    //   var sql = 'select * from products order by price DESC limit 10';
 
     db.any(sql)
         .then(function (data) {
