@@ -236,6 +236,7 @@ app.post('/addnewuser', function (req, res) {
 
 
 // report_product
+
 app.get('/report_product', function (req, res) {
    var sql = 'select * from products order by price DESC limit 10';
 
