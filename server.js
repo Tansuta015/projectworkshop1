@@ -37,8 +37,6 @@ app.get('/products', function (req, res) {
 });
 //user
 app.get('/users', function (req, res) {
-    //res.download('./static/index.html');
-    //res.redirect('/about'); var pgp =require('pg-promise');
     var id = req.param('id');
     var sql = 'select * from users  order by id ASC';
     if (id) {
