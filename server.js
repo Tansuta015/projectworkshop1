@@ -237,8 +237,8 @@ app.post('/addnewuser', function (req, res) {
 
 // report_product
 app.get('/report_product', function (req, res) {
-    var sql = 'SELECT title, SUM(price) AS price FROM products GROUP BY ROLLUP (title) ORDER BY title';
-    //   var sql = 'select * from products order by price DESC limit 15';
+ 
+    var sql = 'select * from products order by price DESC limit 10';
 
     db.any(sql)
         .then(function (data) {
@@ -254,7 +254,7 @@ app.get('/report_product', function (req, res) {
 // report_user
 app.get('/report_user', function (req, res) {
 
-    var sql = 'SELECT purchases.name,purchase_items.quantity,products.tags FROM (((users INNER JOIN purchases ON purchases.id = users.id) INNER JOIN purchase_items ON purchase_items.id = purchases.id)INNER JOIN products ON products.id = purchase_items.id) order by quantity DESC limit 15';
+    var sql = 'SELECT purchases.name,purchase_items.quantity,products.tags FROM (((users INNER JOIN purchases ON purchases.id = users.id) INNER JOIN purchase_items ON purchase_items.id = purchases.id)INNER JOIN products ON products.id = purchase_items.id) order by quantity DESC limit 10';
 
     db.any(sql)
         .then(function (data) {
