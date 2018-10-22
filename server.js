@@ -237,7 +237,7 @@ app.post('/addnewuser', function (req, res) {
 
 // report_product
 app.get('/report_product', function (req, res) {
-    var sql ='SELECT id,title,SUM(price) AS total FROM products GROUP BY ROLLUP(id, title) ORDER BY (id, title)';
+    var sql ='SELECT id,title,SUM(price) AS price FROM products GROUP BY ROLLUP(id, title) ORDER BY (id, title)';
     //var sql = 'select * from products order by price DESC limit 15';
 
     db.any(sql)
